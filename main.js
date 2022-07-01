@@ -2,7 +2,34 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-// Your JavaScript code goes here!
+//Update Modal
+function updateModal() {
+  let div = document.querySelector("div")
+  div.classList.add("hidden")
+  }
+  updateModal()
+
+// grabs all the hearts
+let elements = document.querySelectorAll('.like-glyph')
+
+//giving each element an event 
+for(const element of elements) {
+  element.addEventListener('click', likeCallBack);
+}
+// ALERTS WHEN HEART IS CLICKED
+function likeCallBack(e) {
+ alert('I was clicked!')
+ 
+ // Invokes mimic server call
+ mimicServerCall()
+ .then((JSON) => console.log(JSON, 'This is the response'))
+ .then(() => {})
+ .catch(() => console.log('ERROR'))
+}
+div.classList.remove("hidden")
+
+//LEFT OFF--ADD EVENT LISTNER TO HEART BUTTON 
+
 
 
 
